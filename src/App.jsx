@@ -31,6 +31,10 @@ export default function App() {
       setError('Ilovani bot ichidagi “Tanishuv UZ ni ochish” tugmasi orqali oching.');
       return;
     }
+    if (!API_URL) {
+      setError('Serverga ulanish hali sozlanmagan. Backend ulangach, Mini App to‘liq ishlaydi.');
+      return;
+    }
     authenticate(webApp.initData)
       .then(setSession)
       .catch((authError) => setError(authError.message));
