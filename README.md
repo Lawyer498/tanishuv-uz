@@ -16,10 +16,9 @@ Bot tokenini `.env` faylida yoki hosting provayderining maxfiy Environment Varia
 ## GitHub Pages (HTTPS) — frontend
 
 1. Loyihani GitHub repozitoriyaga `main` branch orqali yuklang.
-2. Repozitoriy sozlamalaridagi **Pages → Build and deployment → GitHub Actions** ni tanlang.
-3. **Settings → Secrets and variables → Actions → Variables** bo‘limida `VITE_API_URL` ni backend HTTPS manzilingizga o‘rnating.
-4. `main` ga push qiling; Actions muvaffaqiyatli tugagach, Pages HTTPS URL’ni chiqaradi.
-5. Hosil bo‘lgan URL’ni backend `CORS_ORIGINS` va `.env` dagi `MINI_APP_URL` ga, keyin BotFather Mini App sozlamasiga kiriting.
+2. `npm run build` bajaring va `dist` ichidagi fayllarni `docs` papkasiga nusxalang.
+3. Repozitoriy sozlamalaridagi **Pages → Build and deployment → Deploy from a branch** ni tanlab, `main` va `/docs` ni belgilang.
+4. Hosil bo‘lgan HTTPS URL’ni backend `CORS_ORIGINS`, build vaqtidagi `VITE_API_URL`, `.env` dagi `MINI_APP_URL` hamda BotFather Mini App sozlamasiga kiriting.
 
 GitHub Pages faqat frontendni joylaydi. Express API, Telegram bot va PostgreSQL uchun doimiy ishlaydigan alohida backend/database hosting kerak. Backend va bot jarayonlari alohida servislar sifatida ishga tushadi.
 
